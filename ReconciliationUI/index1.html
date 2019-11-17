@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html ng-app="plunker">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>AngularJS Plunker</title>
+    <script>document.write('<base href="' + document.location + '" />');</script>
+  <link data-require="bootstrap@*" data-semver="4.0.5" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" />
+  <link rel="styesheet" href="style.css" />
+  <script data-semver="1.4.8" src="https://code.angularjs.org/1.4.8/angular.js" data-require="angular.js@1.4.8"></script>
+  <script data-semver="0.14.3" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.14.3/ui-bootstrap-tpls.js" data-require="ui-bootstrap@0.14.3"></script>
+  <script data-semver="10.1.9" src="https://cdnjs.cloudflare.com/ajax/libs/danialfarid-angular-file-upload/12.2.13/ng-file-upload-shim.min.js" data-require="ng-file-upload@10.1.9"></script>
+  <script data-semver="10.1.9" src="https://cdnjs.cloudflare.com/ajax/libs/danialfarid-angular-file-upload/12.2.13/ng-file-upload.min.js" data-require="ng-file-upload@10.1.9"></script>
+  <script type="text/javascript" src="angular-flash.js"></script>
+  
+  
+  <script src="app1.js"></script>
+  </head>
+
+
+  <body ng-controller="MainCtrl" style = "background-color:ghostwhite;background-image: url('pastel.jpg');">
+     <flash-message duration="5000"></flash-message>
+    <div class = "col-sm-12 " >
+      <div>
+        <label style = "color:brown;padding-left:405px;font-weight:bold;font-size: xx-large;" >Reconciliation System</label>
+      </div>
+      <div class = "col-sm-6" style = "display:inline-block">
+         <upload-file fileArr = "fileArr"></upload-file>
+           <button class="btn btn-primary" style = "" ng-click = "onSubmit()" >Submit</button>
+          <!-- <div class = "col-sm-3" style = "padding-left: 375px; padding-bottom:20px">
+        <button  ng-click = "onSubmit()" >Submit</button>
+      </div>-->
+      </div>
+      <!-- <div class = "col-sm-6" style = "display:inline-block">
+         <upload-file fileArr = "fileArr"></upload-file>
+      </div>-->
+    
+      <div class = "col-sm-12" style = "padding-top:20px">
+        <div class="form-group">
+            <label>Enter Key:</label>
+           <input  class="form-control" type = "text" ng-model = "key">
+        </div>
+      <div class="form-group">
+         <label>Enter Value:</label>
+         <input  class="form-control" style = "padding-bottom:10px" type = "text" ng-model = "value">
+      </div>
+       <div class="form-group">
+            <button   style = "padding-top:10px" class="btn btn-primary" ng-click = "onSave()" >Save</button>
+       </div>
+     
+      </div>
+      <div class="form-group" style = "">
+         <label>Results:</label>
+       <!-- <textarea class="form-control" rows="4" cols="50" style = "display: block;">
+          {{similarPatterns}}</textarea>-->
+          <ul class="list-group">
+             <li class="list-group-item" ng-repeat ="item in res track by $index">
+            
+            <span>Column name "{{item.value}}" from file1 is similar to columns  {{item.name}} from file 2</span>
+          </li>
+        </ul>
+          
+      </div>
+       
+    </div>
+    
+   
+  </body>
+
+</html>
+
+
